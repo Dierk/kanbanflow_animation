@@ -30,7 +30,6 @@ public class ShowComponent extends JComponent {
         downstream = new Buffer(x:400, y:100, offset:50)
     }
 
-
     @Override
     protected void paintComponent(Graphics g) {
         final Graphics2D G2 = g.create()
@@ -42,6 +41,16 @@ public class ShowComponent extends JComponent {
             drawTransformed(G2, processingUnit.image) { AffineTransform txf ->
                 txf.translate processingUnit.x, processingUnit.y
             }
+        }
+        consumers.each { processingUnit ->
+            Closure bulbTransform = { AffineTransform txf ->
+                txf.translate processingUnit.x - 44, processingUnit.y + 75
+                txf.rotate(Math.toRadians(270))
+            }
+            BufferedImage toPaint = processingUnit.offBulb
+            if (thereIsATrayInside(processingUnit)) { toPaint = processingUnit.onBulb }
+            drawTransformed G2, toPaint, bulbTransform
+            drawTransformed G2, processingUnit.backBulb, bulbTransform
         }
         traySprites.each { sprite ->
             sprite.images.each { String name, BufferedImage image ->
@@ -57,6 +66,13 @@ public class ShowComponent extends JComponent {
             }
         }
         G2.dispose()
+    }
+
+    private boolean thereIsATrayInside(processingUnit){
+        traySprites.any {
+            (0..processingUnit.width).containsWithinBounds(it.x - processingUnit.x) &&
+            (0 .. processingUnit.height).containsWithinBounds(it.y - processingUnit.y)
+        }
     }
 
     Dimension getMinimumSize() { [10,10] }

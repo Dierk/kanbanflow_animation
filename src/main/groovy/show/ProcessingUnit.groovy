@@ -10,6 +10,9 @@ import java.awt.Paint
 import java.awt.font.FontRenderContext
 import java.awt.Font
 import java.awt.font.TextLayout
+import eu.hansolo.lightbulb.LightBulb
+import javax.swing.SwingUtilities
+import java.awt.Image
 
 class ProcessingUnit {
 
@@ -22,11 +25,18 @@ class ProcessingUnit {
     int width = 160
     int height = 80
     Paint paint = Color.orange
+    BufferedImage offBulb
+    BufferedImage onBulb
+    BufferedImage backBulb
 
     public ProcessingUnit(int x, int y) {
         this.x = x
         this.y = y
         image = createImage(width, height)
+        def bulb = new LightBulb()
+        backBulb = bulb.createBulbImage(70,70)
+        offBulb = bulb.createOffImage(70,70)
+        onBulb = bulb.createOnImage(70,70,Color.yellow)
     }
 
     public BufferedImage createImage(final int WIDTH, final int HEIGHT) {
