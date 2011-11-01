@@ -13,12 +13,14 @@ import java.awt.font.TextLayout
 import eu.hansolo.lightbulb.LightBulb
 import javax.swing.SwingUtilities
 import java.awt.Image
+import eu.hansolo.lightbulb.JavaShadow
 
 class ProcessingUnit {
 
     private static final eu.hansolo.steelseries.tools.Util UTIL = eu.hansolo.steelseries.tools.Util.INSTANCE;
 
     BufferedImage image
+    BufferedImage shinyImage
 
     volatile int x = 0
     volatile int y = 0
@@ -33,17 +35,19 @@ class ProcessingUnit {
         this.x = x
         this.y = y
         image = createImage(width, height)
+        shinyImage = createImage(width, height, true)
         def bulb = new LightBulb()
         backBulb = bulb.createBulbImage(70,70)
         offBulb = bulb.createOffImage(70,70)
         onBulb = bulb.createOnImage(70,70,Color.yellow)
     }
 
-    public BufferedImage createImage(final int WIDTH, final int HEIGHT) {
+    public BufferedImage createImage(final int WIDTH, final int HEIGHT, boolean shine = false) {
         final BufferedImage IMAGE = UTIL.createImage(WIDTH, HEIGHT, Transparency.TRANSLUCENT)
         final Graphics2D G2 = IMAGE.createGraphics()
         G2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
         def shape = new RoundRectangle2D.Double(0d, 0d, IMAGE.getWidth(), IMAGE.getHeight(), 20d, 20d)
+        if (shine) IMAGE = JavaShadow.INSTANCE.createDropShadow(shape, paint, 0, 1.0, Color.YELLOW, 14, 0)
         G2.paint = paint
         G2.fill shape
         G2.dispose()

@@ -38,8 +38,16 @@ public class ShowComponent extends JComponent {
         drawTransformed(G2, consumerLabelImage){ it.translate 580, 20 }
 
         units.each { processingUnit ->
-            drawTransformed(G2, processingUnit.image) { AffineTransform txf ->
-                txf.translate processingUnit.x, processingUnit.y
+            BufferedImage toPaint = processingUnit.image
+            def x = processingUnit.x
+            def y = processingUnit.y
+            if (thereIsATrayInside(processingUnit)) {
+                toPaint = processingUnit.shinyImage
+                x -= 14
+                y -= 14
+            }
+            drawTransformed(G2, toPaint) { AffineTransform txf ->
+                txf.translate x,y
             }
         }
         consumers.each { processingUnit ->
@@ -70,7 +78,7 @@ public class ShowComponent extends JComponent {
 
     private boolean thereIsATrayInside(processingUnit){
         traySprites.any {
-            (0..processingUnit.width).containsWithinBounds(it.x - processingUnit.x) &&
+            (0 .. 50).containsWithinBounds(it.x - processingUnit.x) &&
             (0 .. processingUnit.height).containsWithinBounds(it.y - processingUnit.y)
         }
     }
