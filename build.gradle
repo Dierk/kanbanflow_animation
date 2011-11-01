@@ -1,0 +1,27 @@
+apply plugin:'groovy'
+apply plugin:'idea'
+
+repositories { 
+	//flatDir dirs:'lib'
+	mavenCentral() 
+}
+
+dependencies {
+	groovy  'org.codehaus.groovy:groovy-all:1.8.2'
+    compile 'org.codehaus.gpars:gpars:0.12'
+    compile 'eu.hansolo:SteelSeries:3.9.6'
+    compile 'org.pushingpixels:trident:1.3'
+
+}
+
+task makeDirs(description:'make all dirs for project setup') << {
+	def sources = [sourceSets.main, sourceSets.test]
+	sources*.allSource*.srcDirs.flatten().each { File srcDir ->
+		println "making $srcDir"
+		srcDir.mkdirs()
+	} 
+}
+
+task wrap(type:Wrapper, description:"create a gradlew") {
+    gradleVersion = '1.0-milestone-4'	
+}
