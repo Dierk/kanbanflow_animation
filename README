@@ -9,5 +9,5 @@ and the video under http://people.canoo.com/mittie/kanban-simulation.mov
 ----
 
 How to start:
-- compile with 'gradlew compileGroovy' or use 'gradlew idea' to create idea project files and build internally
-- start show.ShowStarter.groovy
+
+gradlew run
