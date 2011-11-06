@@ -11,6 +11,7 @@ repositories {
 dependencies {
 	groovy  'org.codehaus.groovy:groovy-all:1.8.2'
     compile 'org.codehaus.gpars:gpars:0.12'
+    compile 'org.multiverse:multiverse-beta:0.7-RC-1'
     compile 'eu.hansolo:SteelSeries:3.9.6'
     compile 'org.pushingpixels:trident:1.3'
 

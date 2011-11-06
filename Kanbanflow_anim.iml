@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/groovy" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.gpars/gpars/c12498cf18507aa6433a94eb7d3e77d5/jars/gpars-0.12.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.gpars/gpars/c12498cf18507aa6433a94eb7d3e77d5/sources/gpars-0.12-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.jsr166-mirror/jsr166y/c12498cf18507aa6433a94eb7d3e77d5/jars/jsr166y-1.7.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.jsr166-mirror/jsr166y/c12498cf18507aa6433a94eb7d3e77d5/sources/jsr166y-1.7.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.jsr166-mirror/extra166y/c12498cf18507aa6433a94eb7d3e77d5/jars/extra166y-1.7.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.jsr166-mirror/extra166y/c12498cf18507aa6433a94eb7d3e77d5/sources/extra166y-1.7.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.multiverse/multiverse-beta/c12498cf18507aa6433a94eb7d3e77d5/jars/multiverse-beta-0.7-RC-1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/junit/junit/c12498cf18507aa6433a94eb7d3e77d5/jars/junit-4.8.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/junit/junit/c12498cf18507aa6433a94eb7d3e77d5/sources/junit-4.8.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/eu.hansolo/SteelSeries/c12498cf18507aa6433a94eb7d3e77d5/jars/SteelSeries-3.9.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/eu.hansolo/SteelSeries/c12498cf18507aa6433a94eb7d3e77d5/sources/SteelSeries-3.9.6-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/com.github.insubstantial/trident/c12498cf18507aa6433a94eb7d3e77d5/jars/trident-6.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/com.github.insubstantial/trident/c12498cf18507aa6433a94eb7d3e77d5/sources/trident-6.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.pushingpixels/trident/c12498cf18507aa6433a94eb7d3e77d5/jars/trident-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.pushingpixels/trident/c12498cf18507aa6433a94eb7d3e77d5/sources/trident-1.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/com.google.android/android/c12498cf18507aa6433a94eb7d3e77d5/jars/android-2.3.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/com.google.android/android/c12498cf18507aa6433a94eb7d3e77d5/sources/android-2.3.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/commons-logging/commons-logging/c12498cf18507aa6433a94eb7d3e77d5/jars/commons-logging-1.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/commons-logging/commons-logging/c12498cf18507aa6433a94eb7d3e77d5/sources/commons-logging-1.1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.apache.httpcomponents/httpclient/c12498cf18507aa6433a94eb7d3e77d5/jars/httpclient-4.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.apache.httpcomponents/httpclient/c12498cf18507aa6433a94eb7d3e77d5/sources/httpclient-4.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.apache.httpcomponents/httpcore/c12498cf18507aa6433a94eb7d3e77d5/jars/httpcore-4.0.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.apache.httpcomponents/httpcore/c12498cf18507aa6433a94eb7d3e77d5/sources/httpcore-4.0.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/commons-codec/commons-codec/c12498cf18507aa6433a94eb7d3e77d5/jars/commons-codec-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/commons-codec/commons-codec/c12498cf18507aa6433a94eb7d3e77d5/sources/commons-codec-1.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.khronos/opengl-api/c12498cf18507aa6433a94eb7d3e77d5/jars/opengl-api-gl1.1-android-2.1_r1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.khronos/opengl-api/c12498cf18507aa6433a94eb7d3e77d5/sources/opengl-api-gl1.1-android-2.1_r1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/xerces/xmlParserAPIs/c12498cf18507aa6433a94eb7d3e77d5/jars/xmlParserAPIs-2.6.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/xpp3/xpp3/c12498cf18507aa6433a94eb7d3e77d5/jars/xpp3-1.1.4c.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/xpp3/xpp3/c12498cf18507aa6433a94eb7d3e77d5/sources/xpp3-1.1.4c-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.json/json/c12498cf18507aa6433a94eb7d3e77d5/jars/json-20080701.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.json/json/c12498cf18507aa6433a94eb7d3e77d5/sources/json-20080701-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.eclipse.swt.gtk.linux/x86_64/c12498cf18507aa6433a94eb7d3e77d5/jars/x86_64-3.3.0-v3346.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.eclipse.swt.gtk.linux/x86/c12498cf18507aa6433a94eb7d3e77d5/jars/x86-3.3.0-v3346.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.groovy/groovy-all/c12498cf18507aa6433a94eb7d3e77d5/jars/groovy-all-1.8.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts/org.codehaus.groovy/groovy-all/c12498cf18507aa6433a94eb7d3e77d5/sources/groovy-all-1.8.2-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
