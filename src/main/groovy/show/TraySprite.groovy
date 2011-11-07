@@ -9,11 +9,12 @@ import java.util.concurrent.CountDownLatch
 import org.pushingpixels.trident.callback.TimelineCallbackAdapter
 import org.pushingpixels.trident.Timeline.TimelineState
 import org.pushingpixels.trident.callback.TimelineCallback
+import java.awt.image.BufferedImage
 
 @Bindable
 class TraySprite {
 
-    Map images = [:]
+    BufferedImage batteryImg
 
     int x = 0
     int y = -100 // be invisible at startup
@@ -25,11 +26,11 @@ class TraySprite {
         int width = 120
         int height = 50
         def battery = new Battery()
-        images.battery = battery.create_BATTERY_Image(width, height, payload)
+        batteryImg = battery.create_BATTERY_Image(width, height, payload)
 
         propertyChange =  { e ->
             if (e.propertyName == "payload"){
-                images.battery = battery.create_BATTERY_Image(width, height, payload)
+                batteryImg = battery.create_BATTERY_Image(width, height, payload)
             }
             caller.repaint()
         }

@@ -61,16 +61,14 @@ public class ShowComponent extends JComponent {
             drawTransformed G2, processingUnit.backBulb, bulbTransform
         }
         for (sprite in traySprites) {
-            sprite.images.each { String name, BufferedImage image ->
-                drawTransformed(G2, image) { AffineTransform txf ->
-                    if (sprite.x > 400) {
-                        double frac = Math.min(1d, (sprite.x - 400) / 206)
-                        txf.translate sprite.x + frac * 120, sprite.y + frac * 50
-                        txf.rotate(Math.toRadians(frac * 180))
-                        return
-                    }
-                    txf.translate sprite.x, sprite.y
+            drawTransformed(G2, sprite.batteryImg) { AffineTransform txf ->
+                if (sprite.x > 400) {
+                    double frac = Math.min(1d, (sprite.x - 400) / 206)
+                    txf.translate sprite.x + frac * 120, sprite.y + frac * 50
+                    txf.rotate(Math.toRadians(frac * 180))
+                    return
                 }
+                txf.translate sprite.x, sprite.y
             }
         }
         G2.dispose()
