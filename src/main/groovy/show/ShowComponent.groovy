@@ -16,22 +16,18 @@ import static groovyx.gpars.stm.GParsStm.*
 
 public class ShowComponent extends JComponent {
 
-    //final List<TraySprite> traySprites = [].asSynchronized()
-    final Ref _traySprites = newRef(Collections.unmodifiableList([]))
+    final Ref _traySprites = newRef([].asImmutable())
     final Buffer upstream
     final Buffer downstream
-    //final List<ProcessingUnit> producers
-    //final List<ProcessingUnit> consumers
-    //final List<ProcessingUnit> units
-    final Ref _producers = newRef(Collections.unmodifiableList([]))
-    final Ref _consumers = newRef(Collections.unmodifiableList([]))
-    final Ref _units = newRef(Collections.unmodifiableList([]))
+    final Ref _producers = newRef([].asImmutable())
+    final Ref _consumers = newRef([].asImmutable())
+    final Ref _units = newRef([].asImmutable())
     final def producerLabelImage = ProcessingUnit.createLabelImage(160,80,"Producer")
     final def consumerLabelImage = ProcessingUnit.createLabelImage(160,80,"Consumer")
     
     private void setTraySprites(value) {
       atomic {
-        _traySprites.set(Collections.unmodifiableList(value))
+        _traySprites.set(value.asImmutable())
       }
     }
     
@@ -39,7 +35,7 @@ public class ShowComponent extends JComponent {
 
     private void setProducers(value) {
       atomic {
-        _producers.set(Collections.unmodifiableList(value))
+        _producers.set(value.asImmutable())
       }
     }
     
@@ -47,7 +43,7 @@ public class ShowComponent extends JComponent {
 
     private void setConsumers(value) {
       atomic {
-        _consumers.set(Collections.unmodifiableList(value))
+        _consumers.set(value.asImmutable())
       }
     }
 
@@ -55,7 +51,7 @@ public class ShowComponent extends JComponent {
 
     private void setUnits(value) {
       atomic {
-        _units.set(Collections.unmodifiableList(value))
+        _units.set(value.asImmutable())
       }
     }
 

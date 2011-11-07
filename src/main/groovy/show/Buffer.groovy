@@ -15,14 +15,14 @@ class Buffer {
     
     //protected final List<TraySprite> sprites = []
     //private final List<TraySprite> sprites = []
-    private final Ref _sprites = newRef(Collections.unmodifiableList([]))
+    private final Ref _sprites = newRef([].asImmutable())
     
     private List<TraySprite> getSprites() {
       _sprites.get()
     }
     
     private void setSprites(List<TraySprite> value) {
-      _sprites.set(Collections.unmodifiableList(value))
+      _sprites.set(value.asImmutable())
     }
 
     //@WithWriteLock
