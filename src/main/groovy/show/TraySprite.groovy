@@ -15,10 +15,10 @@ class TraySprite {
 
     Map images = [:]
 
-    volatile x = 0
-    volatile int y = -100 // be invisible at startup
-    volatile int payload = 0
-    volatile boolean visible = true
+    int x = 0
+    int y = -100 // be invisible at startup
+    int payload = 0
+    boolean visible = true
 
     public TraySprite(JComponent caller) {
 
