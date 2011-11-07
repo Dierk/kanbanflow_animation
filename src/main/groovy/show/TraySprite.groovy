@@ -20,6 +20,7 @@ class TraySprite {
     int y = -100 // be invisible at startup
     int payload = 0
     boolean visible = true
+    def images = new ArrayList<BufferedImage>(101)
 
     public TraySprite(JComponent caller) {
 
@@ -30,7 +31,10 @@ class TraySprite {
 
         propertyChange =  { e ->
             if (e.propertyName == "payload"){
-                batteryImg = battery.create_BATTERY_Image(width, height, payload)
+                if (images[payload] == null){
+                    images[payload] = battery.create_BATTERY_Image(width, height, payload)
+                }
+                batteryImg = images[payload]
             }
             caller.repaint()
         }
