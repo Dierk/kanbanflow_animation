@@ -11,7 +11,7 @@ import javax.swing.JComponent
 
 public class ShowComponent extends JComponent {
 
-    List<TraySprite> traySprites = [].asSynchronized()
+    List<TraySprite> traySprites = []
     Buffer upstream
     Buffer downstream
     List<ProcessingUnit> producers
