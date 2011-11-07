@@ -19,7 +19,6 @@ class Tray {
 
 class Kanban {
 
-
     DataflowQueue upstream   = new DataflowQueue()                   // empty trays travel back upstream to the producer
     DataflowQueue downstream = new DataflowQueue()                   // trays with products travel to the consumer downstream
 
@@ -33,8 +32,6 @@ class Kanban {
     int produceTime
     int consumeTime
     boolean log
-
-    ReentrantReadWriteLock animationSync = new ReentrantReadWriteLock()
 
     volatile boolean dropNext = false
 
@@ -52,22 +49,18 @@ class Kanban {
         done.await()
     }
 
-    @WithReadLock('animationSync')
     void fetchFromUpstream(producer) {
         visualize { showUp.moveBottomTo(it, *producer.productLocation, moveTime ) }
     }
 
-    @WithReadLock('animationSync')
     void produce(mover) {
         visualize { mover.charge it, 0, 100, produceTime }
     }
 
-    @WithWriteLock('animationSync')
     void sendDown(mover) {
         visualize { showDn.addSprite it, mover, moveTime }
     }
 
-    @WithWriteLock('animationSync')
     void fetchFromDownstream(consumer) {
         visualize { showDn.moveBottomTo(it, *consumer.productLocation, moveTime) }
     }
@@ -148,13 +141,16 @@ class Kanban {
     }
 
     void minusWip() {
-        dropNext = true
+        SwingUtilities.invokeLater {
+            dropNext = true
+        }
     }
 
-    @WithReadLock('animationSync')
     void drop(TraySprite mover){
-        mover.visible = false
-        showComponent.traySprites.retainAll { it.visible }
+        SwingUtilities.invokeLater {
+            mover.visible = false
+            showComponent.traySprites.retainAll { it.visible }
+        }
     }
 }
 
