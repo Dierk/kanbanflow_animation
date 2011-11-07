@@ -59,14 +59,10 @@ public class ShowComponent extends JComponent {
 
     ShowComponent(params) {
         super()
-        //params.wip.times { traySprites << new TraySprite(this) }
         params.wip.times { traySprites = traySprites  + new TraySprite(this) }
-        producers = (1 .. params.producers).collect { new ProcessingUnit(180, it * 100) }
-        consumers = (1 .. params.consumers).collect { new ProcessingUnit(580, it * 100) }
-        units = producers + consumers
-        //upstream   = new Buffer(x:  0, y:100, offset:50)
-        //downstream = new Buffer(x:400, y:100, offset:50)
-        
+        producers  = (1 .. params.producers).collect { new ProcessingUnit(180, it * 100) }
+        consumers  = (1 .. params.consumers).collect { new ProcessingUnit(580, it * 100) }
+        units      = producers + consumers
         upstream   = new Buffer(0)
         downstream = new Buffer(400)        
     }
@@ -102,17 +98,15 @@ public class ShowComponent extends JComponent {
             drawTransformed G2, processingUnit.backBulb, bulbTransform
         }
         traySprites.each { sprite ->
-            //sprite.images.each { String name, BufferedImage image ->
-                drawTransformed(G2, sprite.battery) { AffineTransform txf ->
-                    if (sprite.x > 400){
-                        double frac = Math.min( 1d, (sprite.x - 400) / 206)
-                        txf.translate sprite.x + frac*120, sprite.y + frac*50
-                        txf.rotate(Math.toRadians( frac* 180  ))
-                        return
-                    }
-                    txf.translate sprite.x, sprite.y
+            drawTransformed(G2, sprite.battery) { AffineTransform txf ->
+                if (sprite.x > 400){
+                    double frac = Math.min( 1d, (sprite.x - 400) / 206)
+                    txf.translate sprite.x + frac*120, sprite.y + frac*50
+                    txf.rotate(Math.toRadians( frac* 180  ))
+                    return
                 }
-            //}
+                txf.translate sprite.x, sprite.y
+            }
         }
         G2.dispose()
     }

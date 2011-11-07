@@ -19,8 +19,6 @@ import static org.multiverse.api.StmUtils.newBooleanRef
 import static groovyx.gpars.stm.GParsStm.*
 
 class Tray {
-    //volatile int card
-    //volatile def product
     int _card
     TraySprite _product
     
@@ -72,19 +70,10 @@ class Kanban {
       showDn = showComponent.downstream
     }
     
-//    ReentrantReadWriteLock animationSync = new ReentrantReadWriteLock()
-
-    //volatile boolean dropNext = false
     BooleanRef _dropNext = newBooleanRef(false)
     
     boolean getDropNext() { atomic { _dropNext.get() } }
     void setDropNext(boolean value) { atomic { _dropNext.set(value) } }
-
-//    void setShowComponent(ShowComponent show) {
-//        showComponent = show
-//        showUp = showComponent.upstream
-//        showDn = showComponent.downstream
-//    }
 
     void visualize(action) {
         def done = new CountDownLatch(1)
@@ -94,22 +83,18 @@ class Kanban {
         done.await()
     }
 
-    //@WithReadLock('animationSync')
     void fetchFromUpstream(producer) {
         visualize { showUp.moveBottomTo(it, *producer.productLocation, moveTime ) }
     }
 
-    //@WithReadLock('animationSync')
     void produce(mover) {
         visualize { mover.charge it, 0, 100, produceTime }
     }
 
-    //@WithWriteLock('animationSync')
     void sendDown(mover) {
         visualize { showDn.addSprite it, mover, moveTime }
     }
 
-    //@WithWriteLock('animationSync')
     void fetchFromDownstream(consumer) {
         visualize { showDn.moveBottomTo(it, *consumer.productLocation, moveTime) }
     }
@@ -192,7 +177,6 @@ class Kanban {
         dropNext = true
     }
 
-//    @WithReadLock('animationSync')
     void drop(TraySprite mover){
         mover.visible = false
         showComponent.traySprites.retainAll { it.visible }

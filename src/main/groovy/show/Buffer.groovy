@@ -1,6 +1,5 @@
 package show
 
-//import groovy.transform.WithWriteLock
 import org.multiverse.api.references.Ref
 import static org.multiverse.api.StmUtils.newRef
 import static groovyx.gpars.stm.GParsStm.*
@@ -13,8 +12,6 @@ class Buffer {
 
     Buffer(initX) { x = initX }
     
-    //protected final List<TraySprite> sprites = []
-    //private final List<TraySprite> sprites = []
     private final Ref _sprites = newRef([].asImmutable())
     
     private List<TraySprite> getSprites() {
@@ -25,12 +22,8 @@ class Buffer {
       _sprites.set(value.asImmutable())
     }
 
-    //@WithWriteLock
     void addSprite(done, TraySprite newEntry, inTime = 700) {
-        //sprites.retainAll { it.visible }
-        //sprites.add newEntry
-        
-        atomic { 
+        atomic {
           sprites = sprites + newEntry
         
           int add = sprites.size() * offset
@@ -42,15 +35,11 @@ class Buffer {
         }
     }
 
-    //@WithWriteLock
     void moveBottomTo(done, newX, newY, inTime = 700) {
-        //sprites.retainAll { it.visible }
-        
         atomic {
           TraySprite mover = sprites[0]
           sprites = sprites - mover
           mover.moveTo done, newX, newY, inTime          
         }
-        //return mover
     }
 }

@@ -20,8 +20,6 @@ class ProcessingUnit {
     final BufferedImage image
     final BufferedImage shinyImage
 
-    //volatile int x = 0
-    //volatile int y = 0
     final int x = 0
     final int y = 0
     final int width = 160
