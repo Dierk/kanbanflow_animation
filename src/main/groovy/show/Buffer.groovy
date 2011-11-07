@@ -1,6 +1,5 @@
 package show
 
-import groovy.transform.WithWriteLock
 
 class Buffer {
 
@@ -10,7 +9,6 @@ class Buffer {
 
     protected final List<TraySprite> sprites = []
 
-    @WithWriteLock
     void addSprite(done, TraySprite newEntry, inTime = 700) {
         sprites.retainAll { it.visible }
         sprites.add newEntry
@@ -22,7 +20,6 @@ class Buffer {
         }
     }
 
-    @WithWriteLock
     TraySprite moveBottomTo(done, newX, newY, inTime = 700) {
         sprites.retainAll { it.visible }
         TraySprite mover = sprites.remove(0)
