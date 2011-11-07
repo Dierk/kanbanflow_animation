@@ -18,7 +18,7 @@ def config = [
 def component = new ShowComponent(config)
 def kanban = new Kanban(showComponent: component, *:config)
 new SwingBuilder().edt {
-    f = frame defaultCloseOperation: EXIT_ON_CLOSE, {
+    frame visible:true, pack:true, defaultCloseOperation: EXIT_ON_CLOSE, {
         panel (border: emptyBorder(20)) {
             borderLayout()
             widget component, preferredSize: [900, 500] , constraints: CENTER
@@ -31,7 +31,5 @@ new SwingBuilder().edt {
             }
         }
     }
-    f.pack()
-    f.visible = true
 }
 kanban.run()
