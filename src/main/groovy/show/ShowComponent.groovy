@@ -37,7 +37,7 @@ public class ShowComponent extends JComponent {
         drawTransformed(G2, producerLabelImage){ it.translate 180, 20 }
         drawTransformed(G2, consumerLabelImage){ it.translate 580, 20 }
 
-        units.each { processingUnit ->
+        for (processingUnit in units) {
             BufferedImage toPaint = processingUnit.image
             def x = processingUnit.x
             def y = processingUnit.y
@@ -47,10 +47,10 @@ public class ShowComponent extends JComponent {
                 y -= 14
             }
             drawTransformed(G2, toPaint) { AffineTransform txf ->
-                txf.translate x,y
+                txf.translate x, y
             }
         }
-        consumers.each { processingUnit ->
+        for (processingUnit in consumers) {
             Closure bulbTransform = { AffineTransform txf ->
                 txf.translate processingUnit.x - 44, processingUnit.y + 75
                 txf.rotate(Math.toRadians(270))
@@ -60,13 +60,13 @@ public class ShowComponent extends JComponent {
             drawTransformed G2, toPaint, bulbTransform
             drawTransformed G2, processingUnit.backBulb, bulbTransform
         }
-        traySprites.each { sprite ->
+        for (sprite in traySprites) {
             sprite.images.each { String name, BufferedImage image ->
                 drawTransformed(G2, image) { AffineTransform txf ->
-                    if (sprite.x > 400){
-                        double frac = Math.min( 1d, (sprite.x - 400) / 206)
-                        txf.translate sprite.x + frac*120, sprite.y + frac*50
-                        txf.rotate(Math.toRadians( frac* 180  ))
+                    if (sprite.x > 400) {
+                        double frac = Math.min(1d, (sprite.x - 400) / 206)
+                        txf.translate sprite.x + frac * 120, sprite.y + frac * 50
+                        txf.rotate(Math.toRadians(frac * 180))
                         return
                     }
                     txf.translate sprite.x, sprite.y
