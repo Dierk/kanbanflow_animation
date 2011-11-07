@@ -36,26 +36,23 @@ class TraySprite {
 
     }
 
-
     TraySprite moveTo(done, newX, newY, inTime=1000){
-        new Timeline(this).with {
-            addPropertyToInterpolate 'x', x, newX
-            addPropertyToInterpolate 'y', y, newY
-            ease = new Spline(0.5f)
-            duration = inTime
-            addCallback(doneCallback(done))
-            play()
-        }
+        def timeline = new Timeline(this)
+        timeline.addPropertyToInterpolate 'x', x, newX
+        timeline.addPropertyToInterpolate 'y', y, newY
+        timeline.ease = new Spline(0.5f)
+        timeline.duration = inTime
+        timeline.addCallback(doneCallback(done))
+        timeline.play()
         return this
     }
 
     TraySprite charge(done, from, to, inTime=2000) {
-        new Timeline(this).with {
-            addPropertyToInterpolate 'payload', from, to
-            duration = inTime
-            addCallback(doneCallback(done))
-            play()
-        }
+        def timeline = new Timeline(this)
+        timeline.addPropertyToInterpolate 'payload', from, to
+        timeline.duration = inTime
+        timeline.addCallback(doneCallback(done))
+        timeline.play()
         return this
     }
 
