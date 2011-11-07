@@ -11,13 +11,12 @@ import java.awt.font.FontRenderContext
 import java.awt.Font
 import java.awt.font.TextLayout
 import eu.hansolo.lightbulb.LightBulb
-import javax.swing.SwingUtilities
-import java.awt.Image
 import eu.hansolo.lightbulb.JavaShadow
+import eu.hansolo.steelseries.tools.Util
 
 class ProcessingUnit {
 
-    private static final eu.hansolo.steelseries.tools.Util UTIL = eu.hansolo.steelseries.tools.Util.INSTANCE;
+    private static final Util UTIL = Util.INSTANCE
 
     BufferedImage image
     BufferedImage shinyImage
@@ -34,12 +33,12 @@ class ProcessingUnit {
     public ProcessingUnit(int x, int y) {
         this.x = x
         this.y = y
-        image = createImage(width, height)
+        image      = createImage(width, height)
         shinyImage = createImage(width, height, true)
         def bulb = new LightBulb()
         backBulb = bulb.createBulbImage(70,70)
-        offBulb = bulb.createOffImage(70,70)
-        onBulb = bulb.createOnImage(70,70,Color.yellow)
+        offBulb  = bulb.createOffImage(70,70)
+        onBulb   = bulb.createOnImage(70,70,Color.yellow)
     }
 
     public BufferedImage createImage(final int WIDTH, final int HEIGHT, boolean shine = false) {
@@ -70,5 +69,6 @@ class ProcessingUnit {
         return IMAGE
     }
 
-    List getProductLocation() { [x + 26, y + 15] }
+    int getXLocation(){ x + 26 }
+    int getYLocation(){ y + 15 }
 }

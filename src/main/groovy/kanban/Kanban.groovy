@@ -50,7 +50,7 @@ class Kanban {
     }
 
     void fetchFromUpstream(producer) {
-        visualize { showUp.moveBottomTo(it, *producer.productLocation, moveTime ) }
+        visualize { showUp.moveBottomTo(it, producer.getXLocation(), producer.getYLocation(), moveTime ) }
     }
 
     void produce(mover) {
@@ -62,7 +62,7 @@ class Kanban {
     }
 
     void fetchFromDownstream(consumer) {
-        visualize { showDn.moveBottomTo(it, *consumer.productLocation, moveTime) }
+        visualize { showDn.moveBottomTo(it, consumer.getXLocation(), consumer.getYLocation(), moveTime) }
     }
 
     void consume(mover) {
